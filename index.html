@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AirGuard | Smart Air Quality Detection & Advisory</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">AQ</div>
+      <div><strong>AirGuard</strong><span>Smart Air Monitor</span></div>
+    </div>
+    <nav>
+      <a class="active" href="#dashboard">Dashboard</a>
+      <a href="#sensors">Sensors</a>
+      <a href="#analysis">Analysis</a>
+      <a href="#advisory">Advisory</a>
+      <a href="#about">About Project</a>
+    </nav>
+    <div class="device">
+      <div class="dot"></div>
+      <div><b>Device Online</b><small>ESP32 • Live monitoring</small></div>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">SMART ENVIRONMENT MONITORING</p>
+        <h1>Air Quality Dashboard</h1>
+        <p class="muted">Real-time detection, analysis and advisory system</p>
+      </div>
+      <div class="top-right">
+        <span id="lastUpdated">Updated just now</span>
+        <button id="refreshBtn">↻ Refresh</button>
+      </div>
+    </header>
+
+    <section id="dashboard" class="hero-grid">
+      <div class="aqi-card">
+        <div class="card-head"><span>Overall Air Quality</span><span class="badge" id="statusBadge">GOOD</span></div>
+        <div class="aqi-main">
+          <div class="gauge"><div class="gauge-inner"><strong id="aqiValue">42</strong><span>AQI</span></div></div>
+          <div>
+            <h2 id="qualityText">Good Air Quality</h2>
+            <p id="qualityAdvice">Air conditions are currently suitable for normal outdoor activity.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="card-head"><span>Environment</span><span>● LIVE</span></div>
+        <div class="mini-grid">
+          <div><span>Temperature</span><b id="temp">27.4°C</b></div>
+          <div><span>Humidity</span><b id="humidity">58%</b></div>
+          <div><span>Pressure</span><b id="pressure">1008 hPa</b></div>
+          <div><span>Device ID</span><b>AQ-ESP32-01</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sensors">
+      <div class="section-title"><h2>Pollutant Sensors</h2><span>Sensor readings</span></div>
+      <div class="sensor-grid">
+        <article class="sensor-card"><span>PM2.5</span><b id="pm25">18</b><small>µg/m³</small><div class="bar"><i id="pm25bar"></i></div></article>
+        <article class="sensor-card"><span>PM10</span><b id="pm10">32</b><small>µg/m³</small><div class="bar"><i id="pm10bar"></i></div></article>
+        <article class="sensor-card"><span>CO</span><b id="co">0.7</b><small>ppm</small><div class="bar"><i id="cobar"></i></div></article>
+        <article class="sensor-card"><span>NO₂</span><b id="no2">21</b><small>ppb</small><div class="bar"><i id="no2bar"></i></div></article>
+      </div>
+    </section>
+
+    <section id="analysis" class="analysis-grid">
+      <div class="chart-card">
+        <div class="section-title"><h2>Air Quality Trend</h2><span>Last 12 readings</span></div>
+        <canvas id="aqChart"></canvas>
+      </div>
+      <div id="advisory" class="advisory-card">
+        <div class="section-title"><h2>Smart Advisory</h2><span>AI-assisted recommendation</span></div>
+        <div class="advisory-icon">✓</div>
+        <h3 id="adviceTitle">Conditions look healthy</h3>
+        <p id="adviceBody">Continue normal activities. Keep monitoring the readings for sudden changes in pollutant levels.</p>
+        <div class="recommendations">
+          <div>✓ Monitor PM2.5 regularly</div>
+          <div>✓ Maintain good ventilation</div>
+          <div>✓ Review historical trends</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <p class="eyebrow">PROJECT</p>
+        <h2>Smart Air Quality Detection & Advisory System</h2>
+        <p>This prototype receives environmental measurements from a monitoring device, presents them on a web dashboard, identifies air-quality conditions and provides actionable recommendations.</p>
+      </div>
+      <div class="architecture">
+        <span>Sensors</span><b>→</b><span>ESP32</span><b>→</b><span>Data Processing</span><b>→</b><span>Web Dashboard</span>
+      </div>
+    </section>
+
+    <footer>AirGuard • Front Runner Group • Prototype for PSIT TechExpo</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
