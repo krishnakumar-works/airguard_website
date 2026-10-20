@@ -61,7 +61,33 @@
         </div>
       </div>
     </section>
+<section class="live-sensor-panel">
+  <h2>AirGuard — Live Sensor Readings</h2>
+  <p id="firebaseStatus">Connecting to Firebase...</p>
 
+  <div class="sensor-readings">
+    <article>
+      <h3>Temperature</h3>
+      <p><span id="liveTemperature">--</span> °C</p>
+    </article>
+
+    <article>
+      <h3>Humidity</h3>
+      <p><span id="liveHumidity">--</span> %</p>
+    </article>
+
+    <article>
+      <h3>MQ-6 Raw Reading</h3>
+      <p id="liveMq6">--</p>
+    </article>
+
+    <article>
+      <h3>PM2.5</h3>
+      <p><span id="livePm25">--</span> µg/m³</p>
+      <small>Only valid when a PM sensor is connected.</small>
+    </article>
+  </div>
+</section>
     <section id="sensors">
       <div class="section-title"><h2>Pollutant Sensors</h2><span>Sensor readings</span></div>
       <div class="sensor-grid">
@@ -102,7 +128,49 @@
     </section>
 
     <footer>AirGuard • Front Runner Group • Prototype for PSIT TechExpo</footer>
+    <section class="warning-panel">
+  <h2>🚨 Pollution Warning Center</h2>
+  <p id="warningStatus">System normal</p>
+
+  <label>PM2.5 warning limit (µg/m³)</label>
+  <input id="limit" type="number" value="35">
+
+  <label>Assigned person</label>
+  <input
+    id="assignedPerson"
+    type="text"
+    value="Project Supervisor"
+  >
+
+  <button onclick="checkWarning()">
+    Check Warning
+  </button>
+</section>
+<section class="warning-panel">
+  <h2>🚨 AirGuard Warning Center</h2>
+
+  <p id="warningStatus">System status: Normal</p>
+
+  <label for="pm25Input">Test PM2.5 reading (µg/m³)</label>
+  <input id="pm25Input" type="number" value="20" min="0">
+
+  <label for="warningLimit">Test warning limit (µg/m³)</label>
+  <input id="warningLimit" type="number" value="35" min="1">
+
+  <label for="assignedPerson">Assigned person</label>
+  <input id="assignedPerson" type="text" value="Project Supervisor">
+
+  <button type="button" id="checkWarningBtn">
+    Check Warning
+  </button>
+</section>
   </main>
-  <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+
+<!-- Keep your existing script.js include below these lines -->
+<script src="script.js"></script>
 </body>
-</html>
+</html>ss

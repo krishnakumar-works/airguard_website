@@ -1,1 +1,269 @@
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070b12;color:#edf3f9;font-family:Inter,Segoe UI,Arial,sans-serif}.sidebar{position:fixed;left:0;top:0;bottom:0;width:245px;background:#0b111a;border-right:1px solid #1b2633;padding:28px 18px;display:flex;flex-direction:column}.brand{display:flex;gap:12px;align-items:center;margin:0 10px 42px}.logo{width:42px;height:42px;border-radius:12px;background:#153b3a;border:1px solid #2e8f83;display:grid;place-items:center;font-weight:800;color:#72e3d3}.brand strong{display:block;font-size:18px}.brand span{display:block;color:#718092;font-size:11px;margin-top:3px}nav{display:grid;gap:8px}nav a{color:#8492a2;text-decoration:none;padding:12px 13px;border-radius:10px}nav a:hover,nav a.active{background:#111d28;color:#e8f5f4}nav a.active{border-left:3px solid #58d8c8}.device{margin-top:auto;border:1px solid #1c2b38;background:#0d1721;border-radius:12px;padding:13px;display:flex;gap:10px;align-items:center}.dot{width:9px;height:9px;border-radius:50%;background:#4de0a7;box-shadow:0 0 10px #4de0a7}.device b{font-size:12px;display:block}.device small{font-size:10px;color:#718092}main{margin-left:245px;padding:35px 5%;max-width:1500px}header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px}.eyebrow{font-size:10px;letter-spacing:2px;color:#5ed8c9;font-weight:700;margin:0 0 8px}h1{font-size:34px;margin:0 0 7px}h2{font-size:19px;margin:0}.muted,.section-title span{color:#738293;font-size:13px}.top-right{display:flex;gap:12px;align-items:center;color:#6e7c8c;font-size:12px}.top-right button{background:#111c27;color:#d8e4ec;border:1px solid #243544;border-radius:9px;padding:9px 13px;cursor:pointer}.hero-grid,.analysis-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;margin-bottom:22px}.aqi-card,.summary-card,.chart-card,.advisory-card,.about{background:#0c141e;border:1px solid #1a2936;border-radius:15px;padding:22px}.card-head,.section-title{display:flex;justify-content:space-between;align-items:center;color:#8d9aaa;font-size:13px}.badge{padding:5px 9px;border-radius:20px;background:#12362f;color:#5de0bd;font-size:10px;font-weight:800}.aqi-main{display:flex;align-items:center;gap:25px;margin-top:20px}.gauge{width:145px;height:145px;border-radius:50%;background:conic-gradient(#54d8bd 0 25%,#182530 25% 100%);display:grid;place-items:center}.gauge-inner{width:113px;height:113px;border-radius:50%;background:#0c141e;display:grid;place-items:center;align-content:center}.gauge strong{font-size:38px}.gauge span{font-size:10px;color:#78899a}.aqi-main h2{font-size:23px;color:#dff8f3}.aqi-main p{color:#8090a0;line-height:1.6;max-width:390px;font-size:13px}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:23px}.mini-grid div{background:#0a1018;border:1px solid #172431;border-radius:10px;padding:14px}.mini-grid span{display:block;color:#718091;font-size:11px;margin-bottom:8px}.mini-grid b{font-size:18px}.section-title{margin-bottom:15px}.sensor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}.sensor-card{background:#0c141e;border:1px solid #1a2936;border-radius:13px;padding:18px}.sensor-card span{font-size:12px;color:#7e8d9d}.sensor-card b{display:block;font-size:29px;margin:10px 0 1px}.sensor-card small{color:#6d7c8d}.bar{height:4px;background:#17232e;border-radius:10px;margin-top:16px;overflow:hidden}.bar i{display:block;height:100%;width:30%;background:#55d8c2;border-radius:10px}.chart-card canvas{height:260px!important}.advisory-card{position:relative}.advisory-icon{width:42px;height:42px;border-radius:50%;background:#12372f;color:#5ee0bd;display:grid;place-items:center;font-size:20px;margin:24px 0 15px}.advisory-card h3{font-size:21px;margin:0 0 8px}.advisory-card p{color:#81909f;font-size:13px;line-height:1.6}.recommendations{display:grid;gap:9px;margin-top:20px;color:#9aa8b5;font-size:12px}.about{display:flex;justify-content:space-between;gap:30px;margin-top:22px}.about p:not(.eyebrow){color:#81909f;font-size:13px;line-height:1.6;max-width:650px}.architecture{display:flex;align-items:center;gap:10px;flex-wrap:wrap;align-content:center;justify-content:center}.architecture span{padding:10px 12px;border:1px solid #24404b;background:#0d1b23;border-radius:8px;font-size:11px}.architecture b{color:#58d8c8}footer{text-align:center;color:#536273;font-size:10px;padding:28px 0 10px}@media(max-width:900px){.sidebar{position:relative;width:100%;height:auto;display:block}.brand{margin-bottom:18px}nav{display:flex;overflow:auto}.device{display:none}main{margin-left:0;padding:25px 4%}.hero-grid,.analysis-grid,.about{grid-template-columns:1fr;display:grid}.sensor-grid{grid-template-columns:1fr 1fr}header{display:block}.top-right{margin-top:18px}.architecture{justify-content:flex-start}}@media(max-width:520px){.sensor-grid{grid-template-columns:1fr}.aqi-main{flex-direction:column;align-items:flex-start}.about{display:block}}
+/* AirGuard — modern dark dashboard theme
+   Replace the contents of your existing style.css with this file.
+   Designed to keep existing HTML/JavaScript and Firebase behavior unchanged. */
+
+:root {
+  color-scheme: dark;
+  --bg: #07111f;
+  --panel: #0e1b2d;
+  --panel-2: #12233a;
+  --line: rgba(148, 184, 216, .16);
+  --text: #edf6ff;
+  --muted: #93a9c0;
+  --green: #7cf7b2;
+  --cyan: #62d8ff;
+  --yellow: #ffd166;
+  --red: #ff6b81;
+  --radius: 20px;
+  --shadow: 0 16px 45px rgba(0, 0, 0, .22);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(41, 132, 173, .18), transparent 34rem),
+    radial-gradient(ellipse at 100% 15%, rgba(50, 197, 127, .10), transparent 28rem),
+    var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+body, input, button, select, textarea { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+a { color: var(--cyan); text-decoration: none; }
+a:hover { color: var(--green); }
+img, canvas, svg { max-width: 100%; }
+
+header, .header, .navbar, nav {
+  color: var(--text);
+}
+header, .header, .navbar {
+  padding: 20px clamp(18px, 4vw, 48px);
+}
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+nav a {
+  color: var(--muted);
+  font-weight: 600;
+  transition: color .2s ease;
+}
+nav a:hover, nav a.active { color: var(--green); }
+
+main, .container, .dashboard, .main-content {
+  width: min(1440px, 100%);
+  margin-inline: auto;
+  padding: 22px clamp(16px, 3vw, 40px) 48px;
+}
+
+h1, h2, h3, h4 { color: var(--text); line-height: 1.2; letter-spacing: -.025em; }
+h1 { font-size: clamp(2rem, 4vw, 3.35rem); margin: 8px 0 14px; font-weight: 800; }
+h2 { font-size: clamp(1.25rem, 2.2vw, 1.7rem); margin: 0 0 16px; font-weight: 750; }
+h3 { font-size: 1rem; margin: 0 0 10px; font-weight: 700; }
+p { color: var(--muted); }
+small, .muted, .subtitle { color: var(--muted); }
+section { margin-block: 22px; }
+
+.card, .sensor-card, .metric-card, .stat-card, .chart-card, .live-sensor-panel,
+.warning-panel, .panel, .recommendation-card, .advisory-card, .content-card,
+article, .status-card {
+  background: linear-gradient(145deg, rgba(18, 35, 58, .96), rgba(11, 25, 43, .96));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(18px, 2.2vw, 26px);
+  min-width: 0;
+}
+
+.card, .sensor-card, .metric-card, .stat-card, .chart-card, article {
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.card:hover, .sensor-card:hover, .metric-card:hover, .stat-card:hover, article:hover {
+  transform: translateY(-3px);
+  border-color: rgba(98, 216, 255, .36);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, .28);
+}
+
+.sensor-readings, .metrics-grid, .stats-grid, .cards-grid, .dashboard-grid, .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 16px;
+}
+.sensor-readings article, .metrics-grid > *, .stats-grid > *, .cards-grid > *, .dashboard-grid > * {
+  margin: 0;
+}
+
+.sensor-card h3, .metric-card h3, .stat-card h3, .sensor-readings h3 { color: var(--muted); }
+.sensor-card p, .metric-card p, .stat-card p, .sensor-readings article p {
+  color: var(--text);
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  margin: 8px 0 0;
+}
+.sensor-card p span, .metric-card p span, .stat-card p span { color: var(--green); }
+
+button, .button, input[type="submit"] {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: linear-gradient(110deg, var(--green), #48d9d2);
+  color: #061521;
+  font-size: .95rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(74, 222, 172, .14);
+  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+button:hover, .button:hover, input[type="submit"]:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(74, 222, 172, .22);
+}
+button:active { transform: translateY(0); }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(98, 216, 255, .65);
+  outline-offset: 3px;
+}
+
+input, select, textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 6px 0 16px;
+  padding: 12px 14px;
+  color: var(--text);
+  background: #081626;
+  border: 1px solid rgba(148, 184, 216, .25);
+  border-radius: 11px;
+  font-size: 1rem;
+}
+input::placeholder, textarea::placeholder { color: #6f879f; }
+label { display: block; color: #c4d5e6; font-size: .9rem; font-weight: 650; }
+
+.live-sensor-panel {
+  border-color: rgba(98, 216, 255, .3);
+  position: relative;
+  overflow: hidden;
+}
+.live-sensor-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(var(--cyan), var(--green));
+}
+#firebaseStatus, #warningStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(5, 17, 29, .7);
+  font-size: .85rem;
+}
+#firebaseStatus { color: var(--green); }
+#warningStatus { color: var(--yellow); }
+
+.warning-panel {
+  border-color: rgba(255, 107, 129, .28);
+  background: linear-gradient(145deg, rgba(53, 25, 43, .78), rgba(15, 27, 45, .98));
+}
+.warning-panel h2 { color: #ffb6c2; }
+.warning-panel button { background: linear-gradient(110deg, #ff9a9e, #ffcf8b); }
+.warning-panel input { background: rgba(6, 17, 29, .85); }
+
+.badge, .status, .pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(124, 247, 178, .1);
+  color: var(--green);
+  border: 1px solid rgba(124, 247, 178, .2);
+  font-size: .8rem;
+  font-weight: 750;
+}
+.status.warning, .badge.warning { color: var(--yellow); background: rgba(255, 209, 102, .1); }
+.status.danger, .badge.danger { color: var(--red); background: rgba(255, 107, 129, .1); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(7, 17, 31, .45);
+}
+th, td { text-align: left; padding: 13px 15px; border-bottom: 1px solid var(--line); }
+th { color: var(--cyan); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; }
+td { color: #d9e7f4; }
+tr:last-child td { border-bottom: 0; }
+
+hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+footer { color: var(--muted); text-align: center; padding: 26px 16px; border-top: 1px solid var(--line); }
+::selection { color: #04121b; background: var(--green); }
+
+@media (max-width: 700px) {
+  header, .header, .navbar { padding: 16px; }
+  main, .container, .dashboard, .main-content { padding: 16px 14px 34px; }
+  nav { gap: 10px 14px; }
+  .sensor-readings, .metrics-grid, .stats-grid, .cards-grid, .dashboard-grid, .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+  .card, .sensor-card, .metric-card, .stat-card, .chart-card, .live-sensor-panel,
+  .warning-panel, .panel, .recommendation-card, .advisory-card, .content-card,
+  article, .status-card { padding: 16px; border-radius: 15px; }
+  .sensor-card p, .metric-card p, .stat-card p, .sensor-readings article p { font-size: 1.45rem; }
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+}
+@media (max-width: 380px) {
+  .sensor-readings, .metrics-grid, .stats-grid, .cards-grid, .dashboard-grid, .grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Fix AirGuard chart zoom and overflow */
+#analysis {
+  width: 100%;
+  min-width: 0;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+.chart-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.chart-card canvas#aqChart {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  height: 280px !important;
+  max-height: 280px;
+}
+
+@media (max-width: 600px) {
+  .chart-card canvas#aqChart {
+    height: 230px !important;
+    max-height: 230px;
+  }
+}
