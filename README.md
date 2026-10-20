@@ -18,3 +18,4 @@ Sensors → ESP32 → Wi-Fi/Bluetooth/API → Web Dashboard.
 - Pollution-source detection rules
 - AQI calculation based on calibrated sensor data
 - Export reports
+- warning system sends warning email to assigned contributer
